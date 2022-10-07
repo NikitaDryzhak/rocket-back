@@ -4,7 +4,7 @@ const { Contact } = require("../../models/contact");
 
 const updateFavorite = async (req, res) => {
   const { id } = req.params;
-  const result = await Contact.findByIdAndUpdate(id, req.body, { new: true });
+  const result = await Contact.findByIdAndUpdate(id, req.body);
   if (!result) {
     throw RequestError(404, "Not Found");
   }
