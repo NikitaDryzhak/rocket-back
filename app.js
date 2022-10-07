@@ -15,7 +15,7 @@ app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/players", contactsRouter);
+app.use("/", contactsRouter);
 
 app.use((_, res) => {
   res.status(404).json({ message: "Not found" });
